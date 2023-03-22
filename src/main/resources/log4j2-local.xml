@@ -1,0 +1,17 @@
+<Configuration name="sms-service">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="aiAppender"/>
+        </Root>
+        <Logger name="com.equitas.sms" level="${env:LOG_LEVEL:-debug}" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="aiAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>

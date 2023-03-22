@@ -1,0 +1,13 @@
+## Tipco API Urls
+tipco-api:
+  baseUrl: http://10.107.10.37:20002
+  sendOtp: /sendOtp_01
+  validateOtp: /validateOtp_01
+
+web.client.max-connection: 100
+
+
+spring:
+  jackson:
+    serialization:
+      fail-on-empty-beans=false

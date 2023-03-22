@@ -1,0 +1,17 @@
+<Configuration name="sms-service">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <JsonTemplateLayout eventTemplateUri="classpath:jsonTemplate.json" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="aiAppender"/>
+        </Root>
+        <Logger name="com.equitas.sms" level="${env:LOG_LEVEL:-debug}" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="aiAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>
